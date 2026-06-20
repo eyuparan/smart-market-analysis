@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+//başlangıç;
+int main(){
+srand(time(NULL));
+int x,a,t;
+printf("urun fiyat dizisinin kac elemanli olacagini  giriniz:\n");
+scanf("%d",&x);
+printf("urunlerin ucuz olarak degerlendirilmesi icin girilecek esik degerini giriniz:\n");
+scanf("%d",&a);
+printf("en pahali urunun degerini bilebilmemiz icin t degeri girin:\n");
+scanf("%d",&t);
+int urun_fiyati[x],i;
+if(t<a){
+//cünkü böyle olursa mantiken tüm ürünler ucuz olmuş olur;
+printf("hatali deger\n");
+exit(0);
+}
+for(i=0;i<x;i++){
+//ürün fiyatlarını 1 ile 200 arasi kabul ettim;
+urun_fiyati[i]=rand()%t+1;
+if(urun_fiyati[i]<a){
+printf("%d ucuz bir urundur\n",urun_fiyati[i]);
+}else{
+printf("%d pahali bir urundur\n",urun_fiyati[i]);
+}
+}
+return 0;
+}
+//bitiş;
